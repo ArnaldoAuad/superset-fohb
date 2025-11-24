@@ -2,8 +2,8 @@ FROM apache/superset:latest
 
 USER root
 
-# Instalar psycopg2-binary no venv correto
-RUN /app/.venv/bin/pip install --no-cache-dir psycopg2-binary
+# Instalar driver PostgreSQL usando uv (gerenciador de pacotes do Superset)
+RUN uv pip install psycopg2-binary
 
 # Configuração
 COPY superset_config.py /app/pythonpath/superset_config.py
