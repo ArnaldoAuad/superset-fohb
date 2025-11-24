@@ -2,8 +2,8 @@ FROM apache/superset:latest
 
 USER root
 
-# Drivers de banco de dados (essenciais)
-RUN pip install --no-cache-dir \
+# Drivers de banco de dados (instalando no venv correto)
+RUN /app/.venv/bin/pip install --no-cache-dir \
     psycopg2-binary \
     clickhouse-connect \
     trino
