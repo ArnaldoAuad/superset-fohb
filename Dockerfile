@@ -2,17 +2,10 @@ FROM apache/superset:latest
 
 USER root
 
-# Drivers de banco de dados
+# Drivers de banco de dados (essenciais)
 RUN pip install --no-cache-dir \
     psycopg2-binary \
-    mysqlclient \
     clickhouse-connect \
-    pymssql \
-    cx_Oracle \
-    snowflake-sqlalchemy \
-    sqlalchemy-redshift \
-    elasticsearch-dbapi \
-    sqlalchemy-bigquery \
     trino
 
 # Configuração
